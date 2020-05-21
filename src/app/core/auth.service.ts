@@ -9,6 +9,11 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
+
+
+  currentUser;
+
+
   // Create an observable of Auth0 instance of client
   auth0Client$ = (from(
     createAuth0Client({
@@ -93,7 +98,7 @@ export class AuthService {
         // Have client, now call method to handle auth callback redirect
         tap(cbRes => {
           // Get and set target redirect route from callback results
-          targetRoute = cbRes.appState && cbRes.appState.target ? cbRes.appState.target : '/';
+          targetRoute = '/dashboard';
         }),
         concatMap(() => {
           // Redirect callback complete; get user and login status
@@ -106,6 +111,8 @@ export class AuthService {
       // Subscribe to authentication completion observable
       // Response will be an array of user and login status
       authComplete$.subscribe(([user, loggedIn]) => {
+        console.log(user , loggedIn);
+        this.currentUser = user; 
         // Redirect to target route after callback processing
         this.router.navigate([targetRoute]);
       });
@@ -118,7 +125,7 @@ export class AuthService {
       // Call method to log out
       client.logout({
         client_id: "jnpxhH1lXjlwdOO7T2J41CZ1yMbSS68W",
-        returnTo: `${window.location.origin}`
+        returnTo: `http://localhost:4200/logout`
       });
     });
   }

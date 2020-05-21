@@ -1,0 +1,16 @@
+.nav {
+    background-color: darkslategrey;
+    display: flex;
+    flex-direction: row;
+    max-height: 10vh;
+    justify-content: space-between;
+    color: rgb(122, 112, 23);
+}
+.foto{
+    max-height: 10vh;
+}
+.right{
+    display: flex;
+    flex-direction: row; 
+    color: rgb(122, 112, 23);  
+}
