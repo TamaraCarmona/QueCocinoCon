@@ -86,6 +86,7 @@ export class AuthService {
         redirect_uri: `http://localhost:4200/callback`,
         appState: { target: redirectPath }
       });
+      this.loggedIn = true;
     });
   }
 
@@ -128,6 +129,7 @@ export class AuthService {
         returnTo: `http://localhost:4200/logout`
       });
     });
+    this.loggedIn = false;
   }
 
 }

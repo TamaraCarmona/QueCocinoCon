@@ -4,6 +4,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { CallbackComponent } from './pages/callback/callback.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LogoutComponent } from './pages/logout/logout.component';
+import { AuthGuard } from './core/auth-guard.service';
 
 
 const routes: Routes = [
@@ -17,12 +18,17 @@ const routes: Routes = [
 },
 {
   path: 'dashboard',
+  canActivate: [AuthGuard], 
   component:DashboardComponent,
 },
 {
   path: 'logout',
   component:LogoutComponent,
 },
+{
+  path: "**",
+  component: LoginComponent
+}
 ];
 
 @NgModule({
