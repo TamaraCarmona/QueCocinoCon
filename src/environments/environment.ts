@@ -1,9 +1,15 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+//Es un archivo entorno xq pueden ser distintos
 
 export const environment = {
-  production: false
+  production: false,
+  domain: "tamaracarmona.auth0.com",
+  cliente: "jnpxhH1lXjlwdOO7T2J41CZ1yMbSS68W",
+  redirect: 'http://localhost:4200/callback',
+  redirectLogout: 'http://localhost:4200/callback',
+
 };
 
 /*
