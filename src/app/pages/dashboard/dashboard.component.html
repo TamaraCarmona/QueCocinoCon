@@ -1,11 +1,23 @@
-<div class="nav">
-   
-    <div>
-        <h1>Hola {{username}}</h1>   
+<div class="pp">
+    <div class="nav">
+
+        <div class="ml-1">
+            <h4>  {{username |titlecase}}</h4>   
+        </div>
+        <div class="right mr-1">
+            <img [src]="photourl" class="rounded-circle foto" alt="Cinque Terre"  (click)="salir()">         
+        </div>   
     </div>
-    <div class="right">
-        <img [src]="photourl" class="img-fluid foto">
-        <button class="btn btn-secondary" (click)="salir()">Cerrar Sesion</button>    
-    </div>   
-</div>
+   <h1 class="center">QueCocinoCon</h1>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="..." id="search" name="">
+      <div class="input-group-append">
+        <span class="input-group-text fas fa-search flex"></span>
+      </div>
+    </div>
+
+</div>    
+
+
+    
 
