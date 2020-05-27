@@ -2,6 +2,13 @@
     background-color: #EDD892;
     height: 94vh;
 }
+.boton{
+    width:30px;
+    height:30px;
+    background-color:rgb(104, 92, 23);
+    border-radius: 100px;
+    border: 0em;    
+  }
 .nav {
     background-color: rgb(104, 92, 23);
     display: flex;
@@ -25,5 +32,20 @@
 .center{
     text-align: center;
 }
-
+.iconsPP{    
+    background-color: #826815; 
+    width: 50%;
+    margin: 0 auto; 
+    font-size: 40px;
+}
+.fontPP{
+    font-weight:bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+}
+.cardcontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 //FBBA72 EDD892 CFE795 FFC09F  --- 12100E este es negrooo

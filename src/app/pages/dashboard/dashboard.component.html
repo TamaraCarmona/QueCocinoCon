@@ -4,13 +4,23 @@
       <div class="ml-1">
         <h5>{{ username | titlecase }}</h5>
       </div>
-      <div class="right mr-1">
+      <!-- <div class="right mr-1">
         <img
           [src]="photourl"
           class="rounded-circle foto"
           alt="Cinque Terre"
           (click)="salir()"
         />
+      </div>-->
+      <div class="btn-group" >      
+        <button class="boton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                   
+            <div class="right"> 
+            <img [src]="photourl" class="rounded-circle foto" alt="Cinque Terre"/>          
+          </div>
+          </button>              
+         <div class="dropdown-menu dropdown-menu-right">
+          <button class="dropdown-item" type="button" (click)="salir()">Cerrar Sesion</button>
+        </div>
       </div>
     </div>
   </div>
@@ -31,44 +41,64 @@
       </div>
     </div>
   </div>
+<br>
 <div class="container">
     <div class="row">
-        <div class="col-6" style="padding-right: 0px;">
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>       
+        <div class="col-6 " >
+          <div class="cardcontainer">
+            <label for="" class="fontPP" >Principal </label>             
+            <div class="card iconsPP" style="border: 0px;">                
+              <div class="card-body">                
+              <i class="fas fa-utensils iconsPP" style="width: 20px;"></i>                
+              </div>
+            </div> 
+          </div> 
         </div>
-        <div class="col-6" style="padding-left: 0px;" >
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>       
-        </div>
+        <div class="col-6 "  >
+          <div class="cardcontainer">
+              <label for="" class="fontPP">Postres</label>    
+              <div class="card iconsPP" style="border: 0px;">                
+                  <div class="card-body">                
+                  <i class="fas fa-ice-cream iconsPP" style="width: 20px;"></i>                
+                  </div>
+              </div>      
+             </div>
+          </div>
     </div>
+    <br>
+    <div class="container-fluid"> 
+      <div class="row center">
+        <div class="col-12">
+          <svg class="bi bi-x-diamond-fill" width="4em" height="4em" viewBox="0 0 16 16" fill="#6F11A6" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M9.05.435c-.58-.58-1.52-.58-2.1 0L4.047 3.339 8 7.293l3.954-3.954L9.049.435zm3.61 3.611L8.708 8l3.954 3.954 2.904-2.905c.58-.58.58-1.519 0-2.098l-2.904-2.905zm-.706 8.615L8 8.707l-3.954 3.954 2.905 2.904c.58.58 1.519.58 2.098 0l2.905-2.904zm-8.615-.707L7.293 8 3.339 4.046.435 6.951c-.58.58-.58 1.519 0 2.098l2.904 2.905z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <br>
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-6" style="padding-right: 0px;">
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
+        <div class="col-6 " >
+          <div class="cardcontainer">
+            <label style="justify-content: center;" class="fontPP">Bebidas</label>    
+            <div class="card iconsPP" style="border: 0px;">                
+              <div class="card-body">                
+              <i class="fas fa-beer iconsPP" style="width: 20px;"></i>                
+              </div>
             </div>       
+          </div>
         </div>
-        <div class="col-6" style="padding-left: 0px;" >
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>       
-        </div>
+        <div class="col-6 "  >
+          <div class="cardcontainer">
+            <label for="" class="fontPP">Reposteria  </label>  
+            <div class="card iconsPP" style="border: 0px;">                
+              <div class="card-body">                
+              <i class="fas fa-birthday-cake iconsPP" style="width: 20px;"></i>                
+              </div>
+              </div>  
+            </div>   
+          </div>
     </div>
 </div>
 </div>
