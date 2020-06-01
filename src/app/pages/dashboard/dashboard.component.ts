@@ -16,8 +16,7 @@ export class DashboardComponent implements OnInit {
   photourl;
 
   ngOnInit(): void {
-    this.username = this.auth.currentUser.name;
-    this.photourl = this.auth.currentUser.picture;
+    this.username = this.auth.currentUser;
   }
 
   salir(){
