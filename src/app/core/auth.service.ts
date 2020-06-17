@@ -6,6 +6,7 @@ import { tap, catchError, concatMap, shareReplay } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class AuthService {
 
 
   currentUser;
+ 
 
   islogged = false;
   token;
@@ -37,13 +39,11 @@ export class AuthService {
   }
 
   login(username,password){
-
     const user = {
    //   userName: username,
    //   userPassword: password,
     };
-
-    this.http.post('http://localhost:3000/login' , {name:username,pass:password})
+    this.http.post('http://localhost:3000/login' , {name:username,pass:password},)
     .subscribe(res => {
       let LoginResponse: any  = res;
 
@@ -58,6 +58,7 @@ export class AuthService {
       this.islogged = true;
       
       console.log(LoginResponse);
+      this.currentUser = LoginResponse.idUsuario;     
 
       this.router.navigate(['/dashboard']);
     }, err => {
@@ -66,12 +67,92 @@ export class AuthService {
     });
   }
 
+  register(userName,user,apellido,email,pass,dni,direccion){
+    const register = {
+         userName,
+         name: user,
+         apellido:apellido,
+         pass: pass,
+         email:email,
+         dni:dni,
+         direccion:direccion
+       };
+
+    this.http.post('http://localhost:3000/register', {register} ).subscribe(res=>{
+      let registerResponse: any = res;
+      console.log(registerResponse);
+      if(registerResponse){
+        this.currentUser = registerResponse.idUsuario; 
+        this.islogged = true;
+        this.router.navigate(['/dashboard']);
+      }else{        
+        this.logout();
+      }
+    }, err => {
+      console.log(err);
+      this.logout();
+    }
+    )
+  }
+
+
+  update(nombre,user,apellido,email,pass,dni,direccion){
+    const register = {    
+      userName:nombre,
+      name: user,
+      apellido:apellido,
+      pass: pass,
+      email:email,
+      dni:dni,
+      direccion:direccion
+    };
+   
+    this.http.put('http://localhost:3000/register/'+ nombre , {register} ).subscribe(res=>{
+      let registerResponse: any = res;
+      console.log(registerResponse);
+      if(registerResponse){
+        this.islogged = true;
+        this.router.navigate(['/dashboard']);
+      }else{        
+        this.logout();
+      }
+    }, err => {
+      console.log(err);
+      this.logout();
+    }
+    )
+  }
+
+  AddRecipe(tipoReceta,nombre,userName,categoria,urlfoto){
+    const receta = {
+         userName:userName,
+         tipoReceta: tipoReceta,
+         nombre:nombre,
+         categoria: categoria,
+         foto:urlfoto,         
+       };
+
+    this.http.post('http://localhost:3000/receta', {receta} ).subscribe(res=>{
+      let recetaResponse: any = res;
+      console.log(recetaResponse);
+      if(recetaResponse){         
+        this.islogged = true;
+        this.router.navigate(['/receta']);
+      }else{        
+        this.logout();
+      }
+    }, err => {
+      console.log(err);
+      this.logout();
+    }
+    )
+  }
+
   logout(){
     this.islogged = false;
     localStorage.removeItem('recetastoken');
     this.router.navigate(['/login']);
   }
-
 
 
   //----------AUTH0--------------//

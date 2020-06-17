@@ -1,0 +1,36 @@
+:-moz-placeholder {
+    color: #808080;
+    text-align: center;
+
+ }
+ .image{
+   position: relative;
+   min-height: 40px;
+ }
+ .recipe-image-placeholder{
+  // background-image: url(/packs/media/images/blank-e2efb11…-1.png);
+   background-size: cover;
+   min-height: 50px;
+ }
+.image-uploadplace{
+   padding-top: 80px;
+   background: #ecece9;
+}
+.text-tertiary {
+   color: #939290;
+}
+
+.image-upload{
+   position: absolute;
+   top: 0;
+   right: 0;
+   margin: 0;
+   opacity: 0;
+   filter: alpha(opacity=0);
+   transform: translate(-300px) scale(4);
+   font-size: 530px;
+   direction: ltr;
+   cursor: pointer;
+   height: 100%;
+ }
+ 

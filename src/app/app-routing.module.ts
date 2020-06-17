@@ -5,6 +5,9 @@ import { CallbackComponent } from './pages/callback/callback.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LogoutComponent } from './pages/logout/logout.component';
 import { AuthGuard } from './core/auth-guard.service';
+import { RegisterComponent } from './pages/register/register.component';
+import { AddrecipeComponent } from './pages/recipe/addrecipe/addrecipe.component';
+import { CategoriesComponent } from './pages/recipe/categories/categories.component';
 
 
 const routes: Routes = [
@@ -24,6 +27,18 @@ const routes: Routes = [
 {
   path: 'logout',
   component:LogoutComponent,
+},
+{
+  path:'register', 
+  component:RegisterComponent,
+},
+{
+  path:'addrecipe',
+  component:AddrecipeComponent,
+},
+{
+  path:'categories',
+  component:CategoriesComponent,
 },
 {
   path: "**",

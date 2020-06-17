@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+        <div *ngIf="!logged">
+            <h3>Registro</h3>               
+            <input type="text" [(ngModel)]="userName"> UserName      
+        </div> 
+        <div *ngIf="logged">
+            {{currentUser}}   
+            <button type="button" class="btn btn-outline-info" (click)="desactivarCuenta()">Desactivar cuenta</button>
+        </div> 
+            <input type="text" [(ngModel)]="user"> Nombre
+            <input type="text" [(ngModel)]="apellido"> Apellido
+            <input type="text" [(ngModel)]="email"> email
+            <input type="text" [(ngModel)]="dni"> DNI
+            <input type="text" [(ngModel)]="pass"> password
+            <input type="text" [(ngModel)]="direccion"> direccion   
+            <br>
+            <button class="btn btn-success" (click)="save()"> Guardar</button>                                         
+            <button class="btn btn-success" (click)="salir()"> Cancelar</button>      
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+</div>
+
