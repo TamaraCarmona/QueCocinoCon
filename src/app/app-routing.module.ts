@@ -10,6 +10,7 @@ import { AddrecipeComponent } from './pages/recipe/addrecipe/addrecipe.component
 import { CategoriesComponent } from './pages/recipe/categories/categories.component';
 
 
+
 const routes: Routes = [
 {
   path:'login',

@@ -11,7 +11,7 @@ export class UserService {
 
   desactivarUser(userName){
    console.log(userName);
-    this.http.delete('http://localhost:3000/delete/'+ userName,userName).subscribe(res => 
+    this.http.delete('http://localhost:3000/user/delete/'+ userName,userName).subscribe(res => 
     { let registerResponse: any = res;
       console.log(registerResponse);
     }, err => {

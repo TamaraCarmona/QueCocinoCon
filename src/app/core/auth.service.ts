@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,6 +16,7 @@ export class AuthService {
 
 
   currentUser;
+  urlUserFoto;
  
 
   islogged = false;
@@ -43,7 +45,7 @@ export class AuthService {
    //   userName: username,
    //   userPassword: password,
     };
-    this.http.post('http://localhost:3000/login' , {name:username,pass:password},)
+    this.http.post('http://localhost:3000/user/login' , {name:username,pass:password},)
     .subscribe(res => {
       let LoginResponse: any  = res;
 
@@ -59,7 +61,8 @@ export class AuthService {
       
       console.log(LoginResponse);
       this.currentUser = LoginResponse.idUsuario;     
-
+      this.urlUserFoto = LoginResponse.urlfoto;
+      console.log(LoginResponse)
       this.router.navigate(['/dashboard']);
     }, err => {
       console.log(err);
@@ -67,7 +70,7 @@ export class AuthService {
     });
   }
 
-  register(userName,user,apellido,email,pass,dni,direccion){
+  register(userName,user,apellido,email,pass,dni,direccion,urlfoto){
     const register = {
          userName,
          name: user,
@@ -75,10 +78,11 @@ export class AuthService {
          pass: pass,
          email:email,
          dni:dni,
-         direccion:direccion
+         direccion: direccion,
+         urlfoto: urlfoto,
        };
 
-    this.http.post('http://localhost:3000/register', {register} ).subscribe(res=>{
+    this.http.post('http://localhost:3000/user/register', {register} ).subscribe(res=>{
       let registerResponse: any = res;
       console.log(registerResponse);
       if(registerResponse){
@@ -96,7 +100,7 @@ export class AuthService {
   }
 
 
-  update(nombre,user,apellido,email,pass,dni,direccion){
+  update(nombre,user,apellido,email,pass,dni,direccion,urlFoto){
     const register = {    
       userName:nombre,
       name: user,
@@ -104,10 +108,11 @@ export class AuthService {
       pass: pass,
       email:email,
       dni:dni,
-      direccion:direccion
+      direccion:direccion,
+      urlfoto: urlFoto,
     };
    
-    this.http.put('http://localhost:3000/register/'+ nombre , {register} ).subscribe(res=>{
+    this.http.put('http://localhost:3000/user/update/'+ nombre , {register} ).subscribe(res=>{
       let registerResponse: any = res;
       console.log(registerResponse);
       if(registerResponse){

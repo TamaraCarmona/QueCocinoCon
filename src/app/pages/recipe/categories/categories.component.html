@@ -2,7 +2,7 @@
     <div class="col-md-1"></div>
     <div class="col-md-11">              
         <div *ngIf="listCategories.length > 0">    
-            <select class="custom-select input" id="inputGroupSelect01" style="width: 10rem;" [(ngModel)]="seleccionado">
+            <select class="custom-select input" id="inputGroupSelect01" style="width: 10rem;" (change)="Categoria()" [(ngModel)]="seleccionado">
                 <option selected>Categorias...</option>                              
                 <option [value]="categoria.idCategoria" *ngFor="let categoria of listCategories" >{{categoria.nombre}}</option>                              
             </select>

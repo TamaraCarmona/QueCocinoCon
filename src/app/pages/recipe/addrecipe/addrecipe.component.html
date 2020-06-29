@@ -1,16 +1,16 @@
 <div class="pp container">
     <div class="row center">
-        <div class="col-md-1"></div>
+       
         <div class="col-md-10">
             <div class="container-altareceta">           
                 <h2>Nueva Receta</h2>    
                 <br> 
                 <form>            
-                    <input type="text" class="form-control input " placeholder="Titulo">                                                   
+                    <input type="text" class="form-control input " placeholder="Titulo" name="titulo" [(ngModel)]="titulo">                                                   
                 </form>
             </div>    
         </div>
-        <div class="col-md-1"></div>    
+        
     </div>  
     <app-categories></app-categories>
     <app-ingredient></app-ingredient>   
@@ -29,7 +29,10 @@
                 <input class="image-upload" type="file" name="file" aria-label="Añadir foto" accept="image/*">                                     
             </div>                
         </div>  
-    </div>--> 
-  
+    </div>-->  
     <app-step></app-step>
+    
+    <div class="center">
+        <button class="form-control" (click)="AddRecipe()">Grabar</button>
+    </div> 
 </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/core/auth.service';
 import { Router } from '@angular/router';
 import { CategoriesService } from 'src/app/core/categories.service';
+import { RecipeService } from 'src/app/core/recipe.service';
 
 @Component({
   selector: 'app-categories',
@@ -10,15 +11,12 @@ import { CategoriesService } from 'src/app/core/categories.service';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor(private categoria:CategoriesService,private auth:AuthService, private router:Router) { }
+  constructor(private categoria:CategoriesService,private auth:AuthService, private router:Router, private recipe:RecipeService) { }
 
   listCategories = [];
   seleccionado;
 
-  ngOnInit(): void {
-    if(this.auth.islogged) {
-      this.router.navigate(['/dashboard']);
-    }     
+  ngOnInit(): void {   
     this.categoria.categories().subscribe(res =>{
       let resp : any = res;
       this.listCategories = resp;
@@ -27,6 +25,9 @@ export class CategoriesComponent implements OnInit {
       console.log(err);
       }
     )
+  }
+  Categoria(){
+   this.recipe.categoria = this.seleccionado;
   }
 
 }

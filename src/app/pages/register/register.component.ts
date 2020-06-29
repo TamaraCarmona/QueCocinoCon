@@ -26,25 +26,51 @@ export class RegisterComponent implements OnInit {
   pass;
   dni;
   direccion;
+  urlimagen;
   currentUser=this.auth.currentUser;
+  
+  base64textString = [];
 
-  save(){
+  save(){    
+    this.urlimagen = this.base64textString[0];
+     console.log(this.urlimagen);
     if(this.logged){    
-      this.auth.update(this.currentUser,this.user,this.apellido,this.email,this.pass,this.dni,this.direccion);
+      this.auth.update(this.currentUser,this.user,this.apellido,this.email,this.pass,this.dni,this.direccion,this.urlimagen);
     }else{
-      this.auth.register(this.userName,this.user,this.apellido,this.email,this.pass,this.dni,this.direccion);
+      this.auth.register(this.userName,this.user,this.apellido,this.email,this.pass,this.dni,this.direccion,this.urlimagen);
     }    
+    this.urlimagen = '';
   }
 
   salir(){   
+    
     if(this.logged){
-      this.router.navigate["/dashboard"];
+      console.log("entra")
+      this.router.navigate(["/dashboard"]);
     }else{     
-      this.router.navigate["/login"];
+      console.log("entraLogin")
+      this.router.navigate(["/login"]);
     }    
   }
 
   desactivarCuenta(){
     this.userService.desactivarUser(this.currentUser);
   }
+
+  onUploadChange(evt: any) {
+    const file = evt.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = this.handleReaderLoaded.bind(this);
+      reader.readAsBinaryString(file);
+    }
+  }
+
+  handleReaderLoaded(e) {
+    this.base64textString.push('data:image/png;base64,' + btoa(e.target.result));
+  }
+
+
 }

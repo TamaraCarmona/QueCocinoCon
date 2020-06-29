@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipeService } from 'src/app/core/recipe.service';
 
 @Component({
   selector: 'app-ingredient',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IngredientComponent implements OnInit {
 
-  constructor() { }
+  constructor(private recipe:RecipeService) { }
 
   listIngrediente = [];
   ingrediente;
@@ -18,20 +19,23 @@ export class IngredientComponent implements OnInit {
   }
 
   Agregar(){
-    let ingredientes :  any;    
+    let ingrediente :  any;    
    
-    ingredientes = {
+    ingrediente = {
       ingrediente : this.ingrediente,
       cantidad : this.cantidad,
     }
-    this.listIngrediente.push(ingredientes);  
+    this.listIngrediente.push(ingrediente);  
+    this.recipe.listIngredientes = this.listIngrediente;
+    this.ingrediente = '';
+    this.cantidad = '';
   }
 
   Delete(seleccionado): void {    
       for (let ingredient of this.listIngrediente) {     
-      if (ingredient.ingrediente == seleccionado){
-        this.listIngrediente.splice(this.listIngrediente.indexOf(seleccionado), 1);
-        break;
+        if (ingredient.ingrediente == seleccionado){
+          this.listIngrediente.splice(this.listIngrediente.indexOf(seleccionado), 1);
+          break;
       }      
     }
   }

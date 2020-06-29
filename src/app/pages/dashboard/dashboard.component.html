@@ -12,13 +12,11 @@
           (click)="salir()"
         />
       </div>-->
-      <div class="btn-group" >      
-        <button class="boton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                   
-            <div class="right"> 
-            <img [src]="photourl" class="rounded-circle foto" alt="Cinque Terre"/>          
-          </div>
-          </button>              
-         <div class="dropdown-menu dropdown-menu-right">                 
+      <div class="btn-group" >                              
+        <div class="right"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+          <img [src]="photourl" class="rounded-circle foto" alt="Cinque Terre"/>          
+        </div>                 
+        <div class="dropdown-menu dropdown-menu-right">                 
           <button class="dropdown-item" type="button" (click)="salir()">Mis recetas</button>
           <button class="dropdown-item" type="button" (click)="salir()">Mis favoritos</button>
           <button class="dropdown-item" type="button" (click)="routeRegister()">Mi cuenta</button>          
@@ -48,7 +46,7 @@
 <div class="container">
     <div class="row">
         <div class="col-6 " >
-          <div class="cardcontainer">
+          <div class="cardcontainer" (click)="Searching()">
             <label for="" class="fontPP" >Principal </label>             
             <div class="card iconsPP" style="border: 0px;">                
               <div class="card-body">                
@@ -71,8 +69,8 @@
     <br>
     <div class="container-fluid"> 
       <div class="row center">
-        <div class="col-12">
-          <svg class="bi bi-x-diamond-fill" width="4em" height="4em" viewBox="0 0 16 16" fill="#6F11A6" xmlns="http://www.w3.org/2000/svg" (click)="AltaReceta()">
+        <div class="col-12" (click)="AltaReceta()">
+          <svg class="bi bi-x-diamond-fill" width="4em" height="4em" viewBox="0 0 16 16" fill="#6F11A6" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M9.05.435c-.58-.58-1.52-.58-2.1 0L4.047 3.339 8 7.293l3.954-3.954L9.049.435zm3.61 3.611L8.708 8l3.954 3.954 2.904-2.905c.58-.58.58-1.519 0-2.098l-2.904-2.905zm-.706 8.615L8 8.707l-3.954 3.954 2.905 2.904c.58.58 1.519.58 2.098 0l2.905-2.904zm-8.615-.707L7.293 8 3.339 4.046.435 6.951c-.58.58-.58 1.519 0 2.098l2.904 2.905z"/>
           </svg>
         </div>

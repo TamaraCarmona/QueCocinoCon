@@ -18,6 +18,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.username = this.auth.currentUser;
+    this.photourl = this.auth.urlUserFoto;
   }
 
   salir(){
@@ -28,6 +29,8 @@ export class DashboardComponent implements OnInit {
   }
   AltaReceta(){
     this.router.navigate(['/addrecipe']);
-  }
+  }  
+  Searching(){  
 
+  }
 }

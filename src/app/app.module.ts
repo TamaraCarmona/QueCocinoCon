@@ -14,6 +14,10 @@ import { AddrecipeComponent } from './pages/recipe/addrecipe/addrecipe.component
 import { CategoriesComponent } from './pages/recipe/categories/categories.component';
 import { StepComponent } from './pages/recipe/step/step.component';
 import { IngredientComponent } from './pages/recipe/ingredient/ingredient.component';
+import { AddSearchComponent } from './pages/search/add-search/add-search.component';
+import { FilterComponent } from './pages/search/filter/filter.component';
+import { ResultComponent } from './pages/search/result/result.component';
+
 
 @NgModule({
   declarations: [
@@ -27,6 +31,10 @@ import { IngredientComponent } from './pages/recipe/ingredient/ingredient.compon
     CategoriesComponent,
     StepComponent,
     IngredientComponent,
+    AddSearchComponent,
+    FilterComponent,
+    ResultComponent,
+
   ],
   imports: [
     BrowserModule,
