@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from 'src/app/core/search.service';
 
 @Component({
   selector: 'app-add-search',
@@ -7,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddSearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private search : SearchService) { }
 
   ngOnInit(): void {
   }
-  
-  Search(){
 
+  Search(){
+    
   }
 
 }
