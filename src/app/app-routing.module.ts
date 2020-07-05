@@ -8,6 +8,9 @@ import { AuthGuard } from './core/auth-guard.service';
 import { RegisterComponent } from './pages/register/register.component';
 import { AddrecipeComponent } from './pages/recipe/addrecipe/addrecipe.component';
 import { CategoriesComponent } from './pages/recipe/categories/categories.component';
+import { AddSearchComponent } from './pages/search/add-search/add-search.component';
+import { FilterComponent } from './pages/search/filter/filter.component';
+import { ResultComponent } from './pages/search/result/result.component';
 
 
 
@@ -40,6 +43,18 @@ const routes: Routes = [
 {
   path:'categories',
   component:CategoriesComponent,
+},
+{
+  path:'add-search',
+  component:AddSearchComponent,
+},
+{
+  path:'filter',
+  component:FilterComponent,
+},
+{
+  path:'result',
+  component:ResultComponent,
 },
 {
   path: "**",

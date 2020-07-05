@@ -11,7 +11,7 @@ import { RecipeService } from 'src/app/core/recipe.service';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor(private categoria:CategoriesService,private auth:AuthService, private router:Router, private recipe:RecipeService) { }
+  constructor(private categoria:CategoriesService, private recipe:RecipeService) { }
 
   listCategories = [];
   seleccionado;

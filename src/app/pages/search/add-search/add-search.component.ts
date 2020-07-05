@@ -11,5 +11,9 @@ export class AddSearchComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+  Search(){
+
+  }
 
 }

@@ -31,6 +31,6 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/addrecipe']);
   }  
   Searching(){  
-
+    this.router.navigate(['/add-search']);
   }
 }
