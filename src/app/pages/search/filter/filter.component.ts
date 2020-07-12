@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from 'src/app/core/search.service';
+import { element, by } from 'protractor';
 
 @Component({
   selector: 'app-filter',
@@ -13,6 +14,7 @@ export class FilterComponent implements OnInit {
   listIngrediente = [];
   ingrediente; 
   seleccionado;
+  fullMatch; 
 
   ngOnInit(): void {
   }
@@ -24,8 +26,13 @@ export class FilterComponent implements OnInit {
       ingrediente : this.ingrediente,
      
     }
+   
+    
+    console.log(this.fullMatch);
+
     this.listIngrediente.push(ingrediente);  
-   // this.recipe.listIngredientes = this.listIngrediente;
+    this.search.listIngredientes = this.listIngrediente;
+    this.search.fullMatch = this.fullMatch;
     this.ingrediente = '';   
   }
 
@@ -34,8 +41,7 @@ export class FilterComponent implements OnInit {
       if (ingredient.ingrediente == seleccionado){
         this.listIngrediente.splice(this.listIngrediente.indexOf(seleccionado), 1);
         break;
-    }      
+      }      
+    }
   }
-}
-
 }

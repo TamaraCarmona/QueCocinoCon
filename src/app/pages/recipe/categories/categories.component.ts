@@ -25,9 +25,12 @@ export class CategoriesComponent implements OnInit {
       console.log(err);
       }
     )
+    this.seleccionado = this.categoria.route;
   }
   Categoria(){
-   this.recipe.categoria = this.seleccionado;
+   this.recipe.categoria = this.seleccionado;  
   }
+
+ 
 
 }

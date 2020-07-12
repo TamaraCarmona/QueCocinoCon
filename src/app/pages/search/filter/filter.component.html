@@ -5,7 +5,25 @@
         <div class="ingredient">
             <div class="col1">
                 <input type="text"  class="form-control" placeholder="Ingredientes..."[(ngModel)]="ingrediente" >
-            </div>                
+            </div>  
+            <fieldset class="form-group">
+                <div class="row">                 
+                  <div class="col-sm-10">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="fullMatch" value="fullMatch" [ngModel]="fullMatch" checked>
+                      <label class="form-check-label" for="gridRadios1">
+                       Full Match
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="Partial" value="partialMatch" >
+                      <label class="form-check-label" for="gridRadios2">
+                        Partial Match
+                      </label>
+                    </div>                   
+                  </div>
+                </div>
+              </fieldset>              
             <div class="col">
                 <button type="button" class="btn btn-outline-secondary col" (click)="Agregar()" >+</button>
             </div>         

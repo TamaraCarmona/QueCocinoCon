@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from 'src/app/core/search.service';
+import { AuthService } from 'src/app/core/auth.service';
 
 @Component({
   selector: 'app-add-search',
@@ -8,13 +9,15 @@ import { SearchService } from 'src/app/core/search.service';
 })
 export class AddSearchComponent implements OnInit {
 
-  constructor(private search : SearchService) { }
+  constructor(private search : SearchService, private auth: AuthService) { }
 
+  userName;
   ngOnInit(): void {
+    this.userName = this.auth.currentUser;
   }
 
   Search(){
-    
+    this.search.Search(this.userName);
   }
 
 }

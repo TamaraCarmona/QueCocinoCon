@@ -23,10 +23,10 @@ export class RecipeService {
       urlFoto: urlFoto,
     }
     let pasos = this.listPasos;
-    
+  
     let ingredientes = this.listIngredientes;    
     let fotos = this.listFotos;
-    console.log(pasos,ingredientes,receta)
+    console.log(pasos, ingredientes, receta)
     this.http.post('http://localhost:3000/receta/create',{receta,pasos,ingredientes,fotos}).subscribe(res => {
     console.log(res);
     }, err => {

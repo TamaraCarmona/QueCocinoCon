@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/core/auth.service';
 import { Router } from '@angular/router';
+import { CategoriesService } from 'src/app/core/categories.service';
+import { SearchService } from 'src/app/core/search.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private auth:AuthService, private router:Router) { 
+  constructor(private auth:AuthService, private router:Router,private categoria : CategoriesService, private search :SearchService) { 
 
   }
 
@@ -30,7 +32,9 @@ export class DashboardComponent implements OnInit {
   AltaReceta(){
     this.router.navigate(['/addrecipe']);
   }  
-  Searching(){  
+  Principal(){  
     this.router.navigate(['/add-search']);
+    this.categoria.route = 1;    
+    this.search.categoria = 1;
   }
 }
