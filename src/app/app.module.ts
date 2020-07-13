@@ -40,7 +40,7 @@ import { ResultComponent } from './pages/search/result/result.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
+    FormsModule,    
   ],
   providers: [],
   bootstrap: [AppComponent]

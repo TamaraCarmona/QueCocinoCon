@@ -37,4 +37,5 @@ export class DashboardComponent implements OnInit {
     this.categoria.route = 1;    
     this.search.categoria = 1;
   }
+ 
 }

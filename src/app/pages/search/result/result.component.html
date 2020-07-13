@@ -1,9 +1,13 @@
-
-  <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{titulo}}</h5>
-        <p class="card-text">{{usuario}}-{{categoria}}</p>
-        <a href="#" class="btn btn-primary">Boton que te lleve a verla</a>
-      </div>
+<div *ngIf="(listResult.length != 0)">
+  <div *ngFor="let result of listResult">
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{result.titulo}}</h5>
+          <p class="card-text">Usuario:{{result.Usuario_idUsuario}} 
+            Categoria: {{result.nombre}}</p>
+          <a href="#" class="btn btn-primary">Boton que te lleve a verla</a>
+        </div>
+    </div>
   </div>
+</div>
