@@ -8,20 +8,14 @@
             </div>  
             <fieldset class="form-group">
                 <div class="row">                 
-                  <div class="col-sm-10">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="fullMatch" [ngModel]="fullMatch" checked>
-                      <label class="form-check-label" for="gridRadios1">
-                       Full Match
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="Partial" value="partialMatch" >
-                      <label class="form-check-label" for="gridRadios2">
-                        Partial Match
-                      </label>
-                    </div>                   
-                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="col-md-11">                                      
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" [(ngModel)]="seleccionadof">
+                      <option selected>Selection</option>
+                      <option value="1">Full match</option>
+                      <option value="2">Partial Match</option>                     
+                    </select>                    
+                  </div>  
                 </div>
               </fieldset>              
             <div class="col">

@@ -13,19 +13,20 @@ export class FilterComponent implements OnInit {
   listIngrediente = [];
   ingrediente; 
   seleccionado;
-  fullMatch = true; 
+  fullMatch; 
+  seleccionadof;
 
   ngOnInit(): void {
   }
-  
+
   Agregar(){   
     let ingrediente :  any;    
-   
+
     ingrediente = {
       ingrediente : this.ingrediente,
-     
-    }
 
+    }
+    this.fullMatch = this.FullMatch();
     console.log(this.fullMatch)
 
     this.listIngrediente.push(ingrediente);  
@@ -42,5 +43,11 @@ export class FilterComponent implements OnInit {
       }      
     }
   }
-
+  FullMatch(){
+    if(this.seleccionadof == 1){
+      return this.fullMatch = true;
+    }else{
+      return this.fullMatch = false;
+    }
+  }
 }

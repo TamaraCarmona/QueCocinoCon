@@ -69,6 +69,7 @@ export class RegisterComponent implements OnInit {
   }
 
   handleReaderLoaded(e) {
+    this.base64textString.pop();
     this.base64textString.push('data:image/png;base64,' + btoa(e.target.result));
   }
 

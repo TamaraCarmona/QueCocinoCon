@@ -4,7 +4,7 @@
         <div class="col-md-4">
         <div *ngIf="!logged">
             <h3>Registro</h3>               
-            <input type="text" [(ngModel)]="userName"> UserName      
+            <input type="text" [(ngModel)]="userName"> usuario      
         </div> 
         <div *ngIf="logged">
             {{currentUser}}   
@@ -14,9 +14,10 @@
             <input type="text" [(ngModel)]="apellido"> Apellido
             <input type="text" [(ngModel)]="email"> email
             <input type="text" [(ngModel)]="dni"> DNI
-            <input type="text" [(ngModel)]="pass"> password
+            <input type="password" [(ngModel)]="pass"> password
             <input type="text" [(ngModel)]="direccion"> direccion   
             <input class="image-upload" type="file" name="file" aria-label="Añadir foto" (change)="onUploadChange($event)" accept=".png, .jpg, .jpeg" >                                     
+            <img [src]="base64textString[0]" style="width: 150px;"/>   
             <br>
             <button class="btn btn-success" (click)="save()"> Guardar</button>                                         
             <button class="btn btn-success" (click)="salir()"> Cancelar</button>      

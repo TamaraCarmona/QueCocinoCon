@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SearchService } from 'src/app/core/search.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-result',
@@ -8,7 +9,7 @@ import { SearchService } from 'src/app/core/search.service';
 })
 export class ResultComponent implements OnInit {
 
-  constructor(private search : SearchService) { }
+  constructor(private route:Router) { }
 
  listResult = [];
 
@@ -20,6 +21,9 @@ export class ResultComponent implements OnInit {
     this.listResult = lista;
     console.log(this.listResult)
   }
-
+ OpenRecipe(){
+    this.route.navigate(['/addrecipe']);
+    
+ }
 
 }

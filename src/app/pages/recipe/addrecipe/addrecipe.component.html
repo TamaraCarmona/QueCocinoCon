@@ -12,9 +12,8 @@
         </div>
         
     </div>  
-    <app-categories></app-categories>
+    <app-categories></app-categories>   
     <app-ingredient></app-ingredient>   
-  
     <!--  <div class="recipe-show__image image droppable field-group image">
         <div class="recipe-image-placeholder flex">                      
             <div class="flex-grow flex-shrink-0 text-center image-uploadplace">
@@ -30,9 +29,18 @@
             </div>                
         </div>  
     </div>-->  
-    <app-step></app-step>
-    
-    <div class="center">
-        <button class="form-control" (click)="AddRecipe()">Grabar</button>
-    </div> 
+    <div class="row">
+        <div class="col-md-6">
+            <input  type="file" name="file" aria-label="Añadir foto" (change)="onUploadChange($event)" accept=".png, .jpg, .jpeg" >                                     
+        </div>
+        <div class="col-md-6" style="width: 10px;"> 
+            <img [src]="base64textString[0]" class="image"/>  
+        </div>    
+    </div>
+    <app-step></app-step>    
+    <div class="row">
+        <div class="col-md-12">
+          <button class="form-control" (click)="AddRecipe()">Grabar</button>
+        </div> 
+    </div>
 </div>
