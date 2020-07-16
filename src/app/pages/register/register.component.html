@@ -1,29 +1,49 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-        <div *ngIf="!logged">
-            <h3>Registro</h3>               
-            <input type="text" [(ngModel)]="userName"> usuario      
-        </div> 
-        <div *ngIf="logged">
-            {{currentUser}}   
-            <button type="button" class="btn btn-outline-info" (click)="desactivarCuenta()">Desactivar cuenta</button>
-        </div> 
-            <input type="text" [(ngModel)]="user"> Nombre
-            <input type="text" [(ngModel)]="apellido"> Apellido
-            <input type="text" [(ngModel)]="email"> email
-            <input type="text" [(ngModel)]="dni"> DNI
-            <input type="password" [(ngModel)]="pass"> password
-            <input type="text" [(ngModel)]="direccion"> direccion   
-            <input class="image-upload" type="file" name="file" aria-label="Añadir foto" (change)="onUploadChange($event)" accept=".png, .jpg, .jpeg" >                                     
-            <img [src]="base64textString[0]" style="width: 150px;"/>   
-            <br>
-            <button class="btn btn-success" (click)="save()"> Guardar</button>                                         
-            <button class="btn btn-success" (click)="salir()"> Cancelar</button>      
-        </div>
-        <div class="col-md-4"></div>
-    </div>
 
-</div>
+    <div class="row">
+        <div class="col">
+            <div class="register-container">
+                <div *ngIf="!logged">
+                    <h3>Registro</h3>                                 
+                </div> 
+                <div *ngIf="logged">
+                    {{currentUser}}   
+                    <button type="button" class="btn btn-outline-info" (click)="desactivarCuenta()">Desactivar cuenta</button>
+                </div>
+                <div class="form-container">
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Usuario" [(ngModel)]="userName"> 
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Nombre" [(ngModel)]="user"> 
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Apellido" [(ngModel)]="apellido"> 
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Email" [(ngModel)]="email"> 
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="DNI" [(ngModel)]="dni"> 
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" placeholder="Password" [(ngModel)]="pass"> 
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Direccion" [(ngModel)]="direccion"> 
+                    </div>
+                    <div class="input-group">
+                        <span >Foto</span>
+                        <input class="form-control-file" type="file" name="file" (change)="onUploadChange($event)" accept=".png, .jpg, .jpeg" >                                     
+                    </div>
+                    <div class="form-group">
+                        <img [src]="base64textString[0]" style="width: 150px;"/>   
+                    </div>
+                </div>                
+                <div class="buttons">
+                    <button class="btn btn-danger" (click)="salir()"> Cancelar</button>  
+                    <button class="btn btn-success" (click)="save()"> Guardar</button>
+                </div> 
+            </div>
+        </div>
+    </div>
 

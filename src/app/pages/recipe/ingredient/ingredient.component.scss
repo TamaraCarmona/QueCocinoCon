@@ -1,17 +1,15 @@
 .ingredient{
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
 }
-.col1{
+// .col1{
     
-    flex: 2;
-}
-.col{
-    flex:0.5;
-    padding-left: 0em;
-}
+//     flex: 2;
+// }
+// .col{
+//     flex:0.5;
+//     padding-left: 0em;
+// }
 .flotante {
     float : left;
     background-color: rgba(204, 223, 174, 0.61);

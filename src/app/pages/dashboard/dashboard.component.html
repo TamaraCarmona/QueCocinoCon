@@ -1,35 +1,33 @@
-<div class="pp container-fluid">
-  <div class="row-fluid">
-    <div class="nav">
-      <div class="ml-1">
-        <h5>{{ username | titlecase }}</h5>
-      </div>
-      <!-- <div class="right mr-1">
-        <img
-          [src]="photourl"
-          class="rounded-circle foto"
-          alt="Cinque Terre"
-          (click)="salir()"
-        />
-      </div>-->
-      <div class="btn-group" >                              
-        <div class="right"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-          <img [src]="photourl" class="rounded-circle foto" alt="Cinque Terre"/>          
-        </div>                 
-        <div class="dropdown-menu dropdown-menu-right">                 
-          <button class="dropdown-item" type="button" (click)="salir()">Mis recetas</button>
-          <button class="dropdown-item" type="button" (click)="salir()">Mis favoritos</button>
-          <button class="dropdown-item" type="button" (click)="routeRegister()">Mi cuenta</button>          
-          <button class="dropdown-item" type="button" (click)="salir()">Cerrar Sesion</button>          
-        </div>
-      </div>
+<div class="nav">
+  <div class="ml-1">
+    <h5>{{ username | titlecase }}</h5>
+  </div>
+  <!-- <div class="right mr-1">
+    <img
+      [src]="photourl"
+      class="rounded-circle foto"
+      alt="Cinque Terre"
+      (click)="salir()"
+    />
+  </div>-->
+  <div class="btn-group" >                              
+    <div class="right"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+      <img [src]="photourl" class="rounded-circle foto" alt="Cinque Terre"/>          
+    </div>                 
+    <div class="dropdown-menu dropdown-menu-right">                 
+      <button class="dropdown-item" type="button" (click)="salir()">Mis recetas</button>
+      <button class="dropdown-item" type="button" (click)="salir()">Mis favoritos</button>
+      <button class="dropdown-item" type="button" (click)="routeRegister()">Mi cuenta</button>          
+      <button class="dropdown-item" type="button" (click)="salir()">Cerrar Sesion</button>          
     </div>
   </div>
-  <div class="row-fluid">
+</div>
+<div class="dashboard-container">
+  <div class="row">
     <h1 class="center">QueCocinoCon</h1>
   </div>
-  <div class="row-fluid">
-    <div class="input-group mb-3 ml-2">
+  <div class="row">
+    <div class="input-group">
       <input
         type="text"
         class="form-control"
@@ -37,35 +35,73 @@
         id="search"
         name=""
       />
-      <div class="input-group-append mr-3">
+      <div class="input-group-append">
         <span class="input-group-text fas fa-search flex"></span>
       </div>
     </div>
   </div>
+  <!-- <div class="grilla">
+    <div class="fila">
+      <div class="columna">
+
+      </div>
+      <div class="columna">
+
+      </div>
+      <div class="columna">
+
+      </div>
+    </div>
+    <div class="fila">
+      <div class="columna">
+a
+      </div>
+      <div class="columna">
+b
+      </div>
+      <div class="columna">
+c
+      </div>
+    </div>
+    <div class="fila">
+      <div class="columna">
+d
+      </div>
+      <div class="columna">
+e
+      </div>
+      <div class="columna">
+f
+      </div>
+    </div>    
+  </div> -->
+</div>
+  <div class="row">
+    <div class="col-6">
+      <div class="cardcontainer" (click)="Principal()">
+        <label for="" class="fontPP" >Principal </label>             
+        <div class="card iconsPP" style="border: 0px;">                
+          <div class="card-body">                
+            <i class="fas fa-utensils iconsPP" style="width: 20px;"></i>                
+          </div>
+        </div> 
+      </div> 
+    </div>
+    <div class="col-6">
+      <div class="cardcontainer" (click)="Principal()">
+          <label for="" class="fontPP">Postres</label>    
+          <div class="card iconsPP" style="border: 0px;">                
+              <div class="card-body">                
+                <i class="fas fa-ice-cream iconsPP" style="width: 20px;"></i>                
+              </div>
+          </div>      
+         </div>
+      </div>
+</div>
+  
 <br>
 <div class="container">
-    <div class="row">
-        <div class="col-6 " >
-          <div class="cardcontainer" (click)="Principal()">
-            <label for="" class="fontPP" >Principal </label>             
-            <div class="card iconsPP" style="border: 0px;">                
-              <div class="card-body">                
-              <i class="fas fa-utensils iconsPP" style="width: 20px;"></i>                
-              </div>
-            </div> 
-          </div> 
-        </div>
-        <div class="col-6 "  >
-          <div class="cardcontainer" (click)="Principal()">
-              <label for="" class="fontPP">Postres</label>    
-              <div class="card iconsPP" style="border: 0px;">                
-                  <div class="card-body">                
-                  <i class="fas fa-ice-cream iconsPP" style="width: 20px;"></i>                
-                  </div>
-              </div>      
-             </div>
-          </div>
-    </div>
+    
     <br>
     <div class="container-fluid"> 
       <div class="row center">
@@ -101,5 +137,4 @@
             </div>   
           </div>
     </div>
-</div>
 </div>
