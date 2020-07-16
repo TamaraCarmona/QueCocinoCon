@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { SearchService } from 'src/app/core/search.service';
 import { AuthService } from 'src/app/core/auth.service';
 import { ResultComponent } from '../result/result.component';
+import { Router } from '@angular/router';
 
 
 
@@ -12,7 +13,7 @@ import { ResultComponent } from '../result/result.component';
 })
 export class AddSearchComponent implements OnInit {
   @ViewChild(ResultComponent) Result: ResultComponent;
-  constructor(private search: SearchService, private auth: AuthService) { }
+  constructor(private search: SearchService, private auth: AuthService, private route:Router) { }
 
   userName;
   
@@ -28,8 +29,7 @@ export class AddSearchComponent implements OnInit {
       this.Result.LoadResult(listRpta);
       }, err => {
         console.log(err);
-      });
-   
+      });  
   }
 
 }

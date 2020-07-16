@@ -1,0 +1,12 @@
+.viewrecipecontainer{
+   display: flex;// esto siempre
+   flex-direction: column; // esto siempre en paralelo o no
+   align-items: flex-start;
+   justify-content: center;
+}
+.ingredient{
+   width: 100%;
+    display: flex;
+    flex-direction: row;   
+    justify-content: space-evenly;
+}

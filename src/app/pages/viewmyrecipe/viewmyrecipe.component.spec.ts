@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewRecipeComponent } from './view-recipe.component';
+import { ViewmyrecipeComponent } from './viewmyrecipe.component';
 
-describe('ViewRecipeComponent', () => {
-  let component: ViewRecipeComponent;
-  let fixture: ComponentFixture<ViewRecipeComponent>;
+describe('ViewmyrecipeComponent', () => {
+  let component: ViewmyrecipeComponent;
+  let fixture: ComponentFixture<ViewmyrecipeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewRecipeComponent ]
+      declarations: [ ViewmyrecipeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewRecipeComponent);
+    fixture = TestBed.createComponent(ViewmyrecipeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,10 +1,10 @@
 <div *ngIf="(listResult.length != 0)">
   <div *ngFor="let result of listResult">
-    <div class="card" style="width: 18rem;" (click)="OpenRecipe()">
+    <div class="card" style="width: 18rem;" (click)="OpenRecipe(result.idReceta)">
         <img src="..." class="card-img-top" alt="..." >
         <div class="card-body">
           <h5 class="card-title">{{result.titulo}}</h5>
-          <p class="card-text">Usuario:{{result.Usuario_idUsuario}} Categoria: {{result.nombre}} {{result.idReceta}}</p>         
+          <p class="card-text">Usuario:{{result.Usuario_idUsuario}} Categoria: {{result.nombre}} </p>         
         </div>
     </div>
   </div>

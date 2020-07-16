@@ -21,8 +21,8 @@ export class ResultComponent implements OnInit {
     this.listResult = lista;
     console.log(this.listResult)
   }
- OpenRecipe(){
-    this.route.navigate(['/addrecipe']);
+ OpenRecipe(idReceta){
+    this.route.navigate(['/viewrecipe'],idReceta);
     
  }
 

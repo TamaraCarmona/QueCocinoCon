@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col">
+        <div class="viewrecipecontainer">
+        <div *ngFor="let receta of listReceta">    
+        <h2 class="center">{{receta.titulo}}</h2>
+        <br>
+            <div class="row">
+             <h6>  Categoria: {{receta.categoria}}    </h6>         
+                <div class="col" style="width: 10px;"> 
+                    <img [src]="receta.urlReceta" class="image"/>  
+                </div>
+            </div> 
+        </div>       
+            <div class="row">
+                <div class="col">
+                <h5>Ingredientes:</h5>
+                    <div *ngIf="listIngredientes && listIngredientes.length > 0">
+                        <div *ngFor="let ingrediente of listIngredientes">                   
+                        <div class="flotante"> 
+                            <span class="badge badge-pill badge-light">{{ingrediente.nombre}} {{ingrediente.cantidad}} {{ingrediente.umedida}}</span>   
+                        </div>
+                        </div>   
+                    </div>  
+                </div>    
+            </div>         
+        <h4><strong> Pasos</strong></h4>   
+            <div class="row">
+                <div class="col">
+                    <div *ngIf="listPasos && listPasos.length > 0">
+                        <div *ngFor="let step of listPasos">
+                            <div class="flotante"> 
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-10">   
+                                        <div class="" data-field="textarea" data-maxlength="500" data-dir-attribute="auto">
+                                            {{step.descripcion}}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1"></div>  
+                                </div>    
+                            </div>                       
+                        </div>   
+                    </div>        
+                </div>       
+            </div>           
+        </div>
+    </div>
+</div>
