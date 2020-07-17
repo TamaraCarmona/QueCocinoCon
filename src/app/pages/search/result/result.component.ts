@@ -25,5 +25,11 @@ export class ResultComponent implements OnInit {
     this.route.navigate(['/viewrecipe'],idReceta);
     
  }
+ Like(){
+
+ }
+ Favorite(){
+   
+ }
 
 }

@@ -1,1 +1,18 @@
-<p>viewmyrecipe works!</p>
+<br>
+<div *ngIf="(listResult.length != 0)">
+    <div *ngFor="let result of listResult">
+      <div class="col">
+          <div class="card" style="width: 18rem;" (click)="OpenRecipe(result.idReceta)">
+              <img [src]="result.urlFoto"  class="card-img-top" alt="..." >
+              <div class="card-body">
+                <h5 class="card-title">{{result.titulo}}</h5>
+                <p class="card-text">Usuario:{{result.Usuario_idUsuario}} Categoria: {{result.nombre}} </p>         
+              </div>
+          </div>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-outline-danger"(click)="DeleteRecipe(result.idReceta)">Eliminar</button>
+      </div>
+    </div>
+  </div>
+  

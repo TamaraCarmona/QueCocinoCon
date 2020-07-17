@@ -22,6 +22,9 @@ export class DashboardComponent implements OnInit {
     this.username = this.auth.currentUser;
     this.photourl = this.auth.urlUserFoto;
   }
+  MyRecipe(){
+    this.router.navigate(['/viewmyrecipe']);      
+  }
 
   salir(){
     this.auth.logout();
