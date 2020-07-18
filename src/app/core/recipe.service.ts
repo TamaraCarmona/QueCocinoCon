@@ -33,4 +33,13 @@ export class RecipeService {
       console.log(err);      
     });
   }
+
+  Recipe(idReceta){
+    return this.http.get('http://localhost:3000/receta/receta/'+ idReceta)
+  }
+
+  Delete(idReceta){
+    return this.http.delete('http://localhost:3000/receta/delete/'+ idReceta)
+  }
+
 }

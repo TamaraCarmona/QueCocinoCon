@@ -17,7 +17,7 @@ export class StepComponent implements OnInit {
   numeroPaso; //Posicion de la lista
   urlFoto;
   posicion;
-  
+  base64textString = [];
 
   ngOnInit(): void {
   }
@@ -38,6 +38,26 @@ export class StepComponent implements OnInit {
    } 
     this.listFoto.push(foto);
     this.recipe.listFotos = this.listFoto;
+  }
+
+  onUploadChange(evt: any) {
+    const file = evt.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = this.handleReaderLoaded.bind(this);
+      reader.readAsBinaryString(file);
+    }
+  }
+
+  handleReaderLoaded(e) {        
+    this.base64textString.pop();
+    this.base64textString.push('data:image/png;base64,' + btoa(e.target.result));    
+    for(let i = 0; this.listFoto.length < 2 ;i++){
+        this.listFoto.push(this.base64textString[0]);     
+    }  
+    console.log(this.listFoto.length)      
   }
   
 

@@ -17,6 +17,10 @@ import { IngredientComponent } from './pages/recipe/ingredient/ingredient.compon
 import { AddSearchComponent } from './pages/search/add-search/add-search.component';
 import { FilterComponent } from './pages/search/filter/filter.component';
 import { ResultComponent } from './pages/search/result/result.component';
+import { ViewrecipeComponent } from './pages/viewRecipe/viewrecipe/viewrecipe.component';
+import { ViewmyrecipeComponent } from './pages/viewmyrecipe/viewmyrecipe.component';
+import { RankingComponent } from './pages/ranking/ranking.component';
+
 
 
 @NgModule({
@@ -34,7 +38,9 @@ import { ResultComponent } from './pages/search/result/result.component';
     AddSearchComponent,
     FilterComponent,
     ResultComponent,
-
+    ViewrecipeComponent,
+    ViewmyrecipeComponent,
+    RankingComponent,    
   ],
   imports: [
     BrowserModule,
@@ -45,4 +51,5 @@ import { ResultComponent } from './pages/search/result/result.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

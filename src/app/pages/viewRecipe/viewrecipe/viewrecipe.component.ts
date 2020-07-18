@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeService } from 'src/app/core/recipe.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-viewrecipe',
   templateUrl: './viewrecipe.component.html',
   styleUrls: ['./viewrecipe.component.scss']
 })
+
 export class ViewrecipeComponent implements OnInit {
   
   titulo;
@@ -15,9 +17,11 @@ export class ViewrecipeComponent implements OnInit {
   listIngredientes = [];
   listPasos = [];
   listReceta = [];
-
-  constructor(private receta: RecipeService) { }
   
+  constructor(private receta: RecipeService, private _route: ActivatedRoute) { 
+    console.log(this._route.snapshot.paramMap.get('id'))
+  }
+
 
   ngOnInit(): void {
     this.receta.Recipe(1).subscribe(res => {   

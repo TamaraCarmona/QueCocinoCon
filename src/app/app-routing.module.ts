@@ -11,6 +11,9 @@ import { CategoriesComponent } from './pages/recipe/categories/categories.compon
 import { AddSearchComponent } from './pages/search/add-search/add-search.component';
 import { FilterComponent } from './pages/search/filter/filter.component';
 import { ResultComponent } from './pages/search/result/result.component';
+import { ViewrecipeComponent } from './pages/viewRecipe/viewrecipe/viewrecipe.component';
+import { ViewmyrecipeComponent } from './pages/viewmyrecipe/viewmyrecipe.component';
+import { RankingComponent } from './pages/ranking/ranking.component';
 
 
 
@@ -57,7 +60,19 @@ const routes: Routes = [
   component:ResultComponent,
 },
 {
-  path: "**",
+  path:'viewrecipe',
+  component:ViewrecipeComponent,
+},
+{
+  path:'viewmyrecipe',
+  component:ViewmyrecipeComponent,
+},
+{
+  path:'ranking',
+  component:RankingComponent,
+},
+{
+  path: "*",
   component: LoginComponent
 }
 ];

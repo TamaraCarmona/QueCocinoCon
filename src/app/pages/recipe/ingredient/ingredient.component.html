@@ -6,8 +6,11 @@
                 <input type="text"  class="form-control" placeholder="Ingredientes..." [(ngModel)]="ingrediente" >
             </div>   
             <div class="form-group">
-                <input class="form-control" type="text"  placeholder="Cantidad, Unidad..." [(ngModel)]="cantidad">                 
-            </div>   
+                <input class="form-control" type="text"  placeholder="Cantidad..." [(ngModel)]="cantidad">                 
+            </div>  
+            <div class="form-group">
+                <input class="form-control" type="text"  placeholder="Unidad..." [(ngModel)]="umedida">                 
+            </div>  
             <div class="form-group">
                 <button class="btn btn-success btn-outline" (click)="Agregar()" >+</button>
             </div>         

@@ -35,6 +35,9 @@ export class DashboardComponent implements OnInit {
   AltaReceta(){
     this.router.navigate(['/addrecipe']);
   }  
+  Ranking(){
+    this.router.navigate(['/ranking']);
+  }
   Principal(){  
     this.router.navigate(['/add-search']);
     this.categoria.route = 1;    

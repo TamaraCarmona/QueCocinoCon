@@ -12,8 +12,9 @@ export class IngredientComponent implements OnInit {
 
   listIngrediente = [];
   ingrediente;
-  cantidad;//este tiene la unidad de medida  
+  cantidad;
   seleccionado;
+  umedida;
 
   ngOnInit(): void {
   }
@@ -24,6 +25,7 @@ export class IngredientComponent implements OnInit {
     ingrediente = {
       ingrediente : this.ingrediente,
       cantidad : this.cantidad,
+      umedida : this.umedida,
     }
     this.listIngrediente.push(ingrediente);  
     this.recipe.listIngredientes = this.listIngrediente;

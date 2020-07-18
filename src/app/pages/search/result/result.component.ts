@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/core/auth.service';
+import { SearchService } from 'src/app/core/search.service';
 
 
 @Component({
@@ -9,12 +11,14 @@ import { Router } from '@angular/router';
 })
 export class ResultComponent implements OnInit {
 
-  constructor(private route:Router) { }
+  constructor(private route:Router,private search: SearchService,private auth: AuthService) { }
 
- listResult = [];
-
+  listResult = [];
+  userName;
+  like = false;
 
   ngOnInit(): void {
+    this.userName =  this.auth.currentUser;
   }
 
  public LoadResult(lista){
@@ -22,11 +26,16 @@ export class ResultComponent implements OnInit {
     console.log(this.listResult)
   }
  OpenRecipe(idReceta){
-    this.route.navigate(['/viewrecipe'],idReceta);
+  //  this.route.navigate(['/viewrecipe'],idReceta);
     
  }
- Like(){
-
+ Like(idReceta){
+  this.search.Like(this.userName,idReceta).subscribe(res => {
+    console.log(res);
+    }, err => {
+      console.log(err);
+    });
+    this.like = true;
  }
  Favorite(){
    

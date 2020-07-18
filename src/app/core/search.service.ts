@@ -11,16 +11,22 @@ export class SearchService {
   fullMatch;
   constructor(private http: HttpClient) { }
 
-//Respuesta
-  
-
-
   Search(userName){    
-    const ingredientes = this.listIngredientes;
-
-    console.log(this.fullMatch)
+    const ingredientes = this.listIngredientes;   
     return this.http.post('http://localhost:3000/search/principal' , {ingredientes,userName:userName ,categoria:this.categoria,fullMatch:this.fullMatch})
    
   }
+
+  SearchUserName(userName){
+    return this.http.get('http://localhost:3000/search/myreceta/' + userName);
+  }
+
+  TopRanking(){
+    return this.http.get('http://localhost:3000/search/ranking/top');
+  }
+  Like(userName,idReceta){    
+    return this.http.post('http://localhost:3000/ranking/like',{userName:userName,idReceta:idReceta})
+  }
+
 
 }
