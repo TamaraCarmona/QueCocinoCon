@@ -27,11 +27,11 @@ export class ViewmyrecipeComponent implements OnInit {
   }
 
  OpenRecipe(idReceta){
-    this.route.navigate(['/viewrecipe'],idReceta);
+  this.route.navigate(['/viewrecipe'], {state:{ idReceta }});
  }
 
  DeleteRecipe(idReceta){
-   this.receta.Delete(idReceta).subscribe(res => {
+   this.receta.Delete(idReceta,this.userName).subscribe(res => {
     console.log(res);
     }, err => {
       console.log(err);

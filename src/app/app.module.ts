@@ -20,6 +20,7 @@ import { ResultComponent } from './pages/search/result/result.component';
 import { ViewrecipeComponent } from './pages/viewRecipe/viewrecipe/viewrecipe.component';
 import { ViewmyrecipeComponent } from './pages/viewmyrecipe/viewmyrecipe.component';
 import { RankingComponent } from './pages/ranking/ranking.component';
+import { FavoriteComponent } from './pages/favorite/favorite.component';
 
 
 
@@ -40,7 +41,8 @@ import { RankingComponent } from './pages/ranking/ranking.component';
     ResultComponent,
     ViewrecipeComponent,
     ViewmyrecipeComponent,
-    RankingComponent,    
+    RankingComponent,
+    FavoriteComponent,    
   ],
   imports: [
     BrowserModule,

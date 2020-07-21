@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -12,7 +13,7 @@ export class RecipeService {
   listFotos = [];
   categoria;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private route: Router) { }
 
   AddRecipe(titulo,userName,urlFoto){
     let receta = {
@@ -26,10 +27,12 @@ export class RecipeService {
   
     let ingredientes = this.listIngredientes;    
     let fotos = this.listFotos;
-    console.log(pasos, ingredientes, receta)
+    console.log(fotos)
     this.http.post('http://localhost:3000/receta/create',{receta,pasos,ingredientes,fotos}).subscribe(res => {
     console.log(res);
+    this.route.navigate(['/dashboard']);
     }, err => {
+      this.route.navigate(['/addrecipe']);
       console.log(err);      
     });
   }
@@ -38,8 +41,8 @@ export class RecipeService {
     return this.http.get('http://localhost:3000/receta/receta/'+ idReceta)
   }
 
-  Delete(idReceta){
-    return this.http.delete('http://localhost:3000/receta/delete/'+ idReceta)
+  Delete(idReceta,userName){
+    return this.http.put('http://localhost:3000/receta/delete/'+ idReceta,{userName:userName})
   }
 
 }

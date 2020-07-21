@@ -21,7 +21,7 @@
     <div class="col">       
         <div *ngFor="let ingredient of listIngrediente">        
             <div class="flotante">                                                     
-                {{ingredient.ingrediente}} <strong class="mr-auto"> {{ingredient.cantidad}}  </strong>                   
+                {{ingredient.ingrediente}} <strong class="mr-auto"> {{ingredient.cantidad}}  {{ingredient.umedida}} </strong>                   
                 <button type="button" class="close" data-dismiss="alert" (click)="Delete(ingredient.ingrediente)">×</button>                              
             </div>          
         </div>        

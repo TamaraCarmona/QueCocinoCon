@@ -26,11 +26,12 @@ export class IngredientComponent implements OnInit {
       ingrediente : this.ingrediente,
       cantidad : this.cantidad,
       umedida : this.umedida,
-    }
+    }  
     this.listIngrediente.push(ingrediente);  
-    this.recipe.listIngredientes = this.listIngrediente;
+    this.recipe.listIngredientes = this.listIngrediente;    
     this.ingrediente = '';
     this.cantidad = '';
+    this.umedida = '';
   }
 
   Delete(seleccionado): void {    

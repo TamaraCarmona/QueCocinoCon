@@ -16,29 +16,75 @@ export class ResultComponent implements OnInit {
   listResult = [];
   userName;
   like = false;
+  heartType: String = "heart-empty"
 
   ngOnInit(): void {
     this.userName =  this.auth.currentUser;
   }
 
- public LoadResult(lista){
-    this.listResult = lista;
-    console.log(this.listResult)
+ public LoadResult(){  
+  this.search.Search(this.userName).subscribe(res => {
+    let recetaResponse: any = res;
+    this.listResult = recetaResponse;    
+    }, err => {
+      console.log(err);
+    });  
   }
+
  OpenRecipe(idReceta){
-  //  this.route.navigate(['/viewrecipe'],idReceta);
+    this.route.navigate(['/viewrecipe'], {state:{ idReceta }});
     
  }
- Like(idReceta){
-  this.search.Like(this.userName,idReceta).subscribe(res => {
-    console.log(res);
+
+ Favorite(receta){
+  receta.favorita = !receta.favorita;
+  if(receta.favorita){
+    this.insertfavorita(receta);
+  }else{
+    this.deletefavorita(receta);
+  }
+ }
+ 
+ insertfavorita(receta){
+  this.search.favorite(this.userName,receta.idReceta).subscribe(res => {
+    console.log(res);        
+    }, err => {
+      console.log(err);
+    });  
+ }
+ deletefavorita(receta){
+  this.search.disfavorite(this.userName,receta.idReceta).subscribe(res => {        
     }, err => {
       console.log(err);
     });
-    this.like = true;
+}
+ 
+ toggleHeart(receta){
+  receta.megusta = !receta.megusta;
+  if(receta.megusta){
+    this.insertLike(receta);
+  }else{
+    this.deleteLike(receta);
+  }
  }
- Favorite(){
-   
+
+ insertLike(receta){ 
+  this.search.Like(this.userName,receta.idReceta).subscribe(res => {
+    console.log(res);    
+      receta.totalmegusta++;
+    }, err => {
+      console.log(err);
+    });  
+
  }
+ deleteLike(receta){
+  this.search.DisLike(this.userName,receta.idReceta).subscribe(res => {      
+    receta.totalmegusta--;
+    }, err => {
+      console.log(err);
+    });   
+ }
+
+
 
 }

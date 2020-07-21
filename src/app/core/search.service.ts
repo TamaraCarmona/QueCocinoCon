@@ -21,12 +21,21 @@ export class SearchService {
     return this.http.get('http://localhost:3000/search/myreceta/' + userName);
   }
 
-  TopRanking(){
-    return this.http.get('http://localhost:3000/search/ranking/top');
+  TopRanking(userName){
+    return this.http.get('http://localhost:3000/ranking/top/'+userName);
   }
   Like(userName,idReceta){    
     return this.http.post('http://localhost:3000/ranking/like',{userName:userName,idReceta:idReceta})
   }
+  DisLike(userName,idReceta){
+    return this.http.put('http://localhost:3000/ranking/like/delete/'+idReceta,{userName:userName})
+  }
 
+  favorite(userName,idReceta){
+    return this.http.post('http://localhost:3000/favorite/create',{userName:userName,idReceta:idReceta})
+  }
+  disfavorite(userName,idReceta){
+    return this.http.put('http://localhost:3000/ranking/like/delete/'+idReceta,{userName:userName})
+  }
 
 }

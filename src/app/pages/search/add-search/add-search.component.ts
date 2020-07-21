@@ -22,14 +22,7 @@ export class AddSearchComponent implements OnInit {
   }
 
   Search(){
-   let listRpta = [];
-    this.search.Search(this.userName).subscribe(res => {
-      let recetaResponse: any = res;
-      listRpta = recetaResponse; 
-      this.Result.LoadResult(listRpta);
-      }, err => {
-        console.log(err);
-      });  
+      this.Result.LoadResult();
   }
-
+  
 }

@@ -24,25 +24,39 @@
                 </div>    
             </div>         
         <h4><strong> Pasos</strong></h4>   
-            <div class="row">
-                <div class="col">
-                    <div *ngIf="listPasos && listPasos.length > 0">
-                        <div *ngFor="let step of listPasos">
-                            <div class="flotante"> 
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-10">   
-                                        <div class="" data-field="textarea" data-maxlength="500" data-dir-attribute="auto">
-                                            {{step.descripcion}}
+            <div *ngIf="listPasos && listPasos.length > 0">
+                <div *ngFor="let step of listPasos;let i=index">   
+                    <div class="flotante">  
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10">
+                            {{i+1}}   
+                            <div class="row">
+                                <div class="col">
+                                    <div class="container-imagen">
+                                        <div *ngFor="let i of [0,1,2];let j=index">
+                                            <div class="imagenload">                                                                                                                  
+                                             <!--   <img [src]="listFoto[i]" class="img-thumbnail" *ngIf="(listFoto[i])"/> -->                                      
+                                            </div>             
                                         </div>
                                     </div>
-                                    <div class="col-md-1"></div>  
-                                </div>    
-                            </div>                       
-                        </div>   
-                    </div>        
-                </div>       
-            </div>           
+                                </div>
+                            </div>                              
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div>              
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10">   
+                                <div class="" data-field="textarea" data-maxlength="500" data-dir-attribute="auto">
+                                    {{step.descripcion}}
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>  
+                        </div>       
+                    </div>
+                </div>
+            </div>          
         </div>
     </div>
 </div>

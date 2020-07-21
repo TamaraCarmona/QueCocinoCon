@@ -19,23 +19,21 @@ export class AuthService {
   urlUserFoto;
   islogged = false;
   token;
+  tokenfoto;
   constructor(private http:HttpClient, private router:Router) {
-    const token = localStorage.getItem('recetastoken');  
+    const token = localStorage.getItem('currentUser'); 
+    const urltoken = localStorage.getItem('urlFoto'); 
     console.log(token);
     if(token) {
-      const decodedToken = JSON.parse(atob(token.split('.')[1]));
-      const expiration = decodedToken.expire;
-      if(expiration > Date.now()){       
-        localStorage.removeItem('recetastoken');
-      } else {
-        this.islogged = true;
-        this.token = token;
-        this.currentUser = decodedToken.user;
-      }
+      this.islogged = true;
+      this.token = token;
+      this.tokenfoto = urltoken;
+      
+      this.currentUser = this.token; 
+      this.urlUserFoto    = this.tokenfoto;   
     } else {
       this.islogged = false;
     }
-
   }
 
   login(username,password){
@@ -57,10 +55,11 @@ export class AuthService {
            
       this.islogged = true;
       
-      console.log(LoginResponse);
+      
       this.currentUser = LoginResponse.idUsuario;     
       this.urlUserFoto = LoginResponse.urlfoto;
-      console.log(LoginResponse)
+      localStorage.setItem('currentUser',this.currentUser);
+      localStorage.setItem('urlFoto',this.urlUserFoto);
       this.router.navigate(['/dashboard']);
     }, err => {
       console.log(err);
@@ -153,7 +152,7 @@ export class AuthService {
 
   logout(){
     this.islogged = false;
-    localStorage.removeItem('recetastoken');
+    localStorage.removeItem('currentUser');
     this.router.navigate(['/login']);
   }
 

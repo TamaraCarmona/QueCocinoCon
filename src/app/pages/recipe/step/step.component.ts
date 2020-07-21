@@ -18,7 +18,7 @@ export class StepComponent implements OnInit {
   urlFoto;
   posicion;
   base64textString = [];
-
+  fila;
   ngOnInit(): void {
   }
 
@@ -30,6 +30,8 @@ export class StepComponent implements OnInit {
 
     this.listPasos.push(Paso);
     this.recipe.listPasos = this.listPasos;
+    this.descripcion = '';
+    this.urlFoto = '';
   }
   addFoto(){
     let foto = { 
@@ -40,9 +42,10 @@ export class StepComponent implements OnInit {
     this.recipe.listFotos = this.listFoto;
   }
 
-  onUploadChange(evt: any) {
+  onUploadChange(evt: any,i) {
     const file = evt.target.files[0];
-
+    console.log(i)
+    this.fila = i;
     if (file) {
       const reader = new FileReader();
 
@@ -51,14 +54,14 @@ export class StepComponent implements OnInit {
     }
   }
 
-  handleReaderLoaded(e) {        
-    this.base64textString.pop();
-    this.base64textString.push('data:image/png;base64,' + btoa(e.target.result));    
-    for(let i = 0; this.listFoto.length < 2 ;i++){
-        this.listFoto.push(this.base64textString[0]);     
-    }  
-    console.log(this.listFoto.length)      
+  handleReaderLoaded(e) {            
+   console.log(this.fila)
+    this.base64textString[this.fila] = ('data:image/png;base64,' + btoa(e.target.result));      
+    this.listFoto[this.fila] = this.base64textString[this.fila];     
   }
-  
+
+  deletestep(step){
+    
+  }
 
 }

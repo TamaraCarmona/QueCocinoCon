@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/auth.service';
+import { Router } from '@angular/router';
 import { SearchService } from 'src/app/core/search.service';
 import { RecipeService } from 'src/app/core/recipe.service';
 
 @Component({
-  selector: 'app-ranking',
-  templateUrl: './ranking.component.html',
-  styleUrls: ['./ranking.component.scss']
+  selector: 'app-favorite',
+  templateUrl: './favorite.component.html',
+  styleUrls: ['./favorite.component.scss']
 })
-export class RankingComponent implements OnInit {
+export class FavoriteComponent implements OnInit {
 
-  
   constructor(private auth:AuthService, private route :Router, private search: SearchService, private receta : RecipeService) { }
-  
+
   listResult = [];
   userName = this.auth.currentUser;
 

@@ -1,40 +1,24 @@
+.container-cargastep{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+}
+.container-imagen{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  
+}
 .flex-grow {
     flex-grow: 1;
 }
 .flex {
     display: flex;
 }
-.image-upload{
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-    opacity: 0;
-    filter: alpha(opacity=0);   
-    cursor: pointer;
-    height: 70px;
-    width: 70px;
-    left: 10px;
-  }
-  .image-upload2{
-    position: absolute;
-    top: 0;
-    right: 20px;
-    margin: 0;
-    opacity: 0;
-    filter: alpha(opacity=0);
-    cursor: pointer;
-    height: 70px;
-    width: 70px;
-  }
-  .image-upload1{
-    position: absolute;
-    top: 0;
-    right: 20px;
-    margin: 0;
-    opacity: 0;
-    filter: alpha(opacity=0);   
-    cursor: pointer;
-    height: 70px;
-    width: 70px;
-  }
+.imagenload>input{
+  display: none;
+  
+}
