@@ -38,4 +38,9 @@ export class SearchService {
     return this.http.put('http://localhost:3000/ranking/like/delete/'+idReceta,{userName:userName})
   }
 
+  MyFavorite(userName){
+    console.log("entra a la favorita")
+    return this.http.get('http://localhost:3000/ranking/favorito/'+userName);
+  }
+
 }

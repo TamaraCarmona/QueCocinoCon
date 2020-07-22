@@ -21,6 +21,7 @@ import { ViewrecipeComponent } from './pages/viewRecipe/viewrecipe/viewrecipe.co
 import { ViewmyrecipeComponent } from './pages/viewmyrecipe/viewmyrecipe.component';
 import { RankingComponent } from './pages/ranking/ranking.component';
 import { FavoriteComponent } from './pages/favorite/favorite.component';
+import { FavoritosComponent } from './pages/favoritos/favoritos.component';
 
 
 
@@ -42,7 +43,8 @@ import { FavoriteComponent } from './pages/favorite/favorite.component';
     ViewrecipeComponent,
     ViewmyrecipeComponent,
     RankingComponent,
-    FavoriteComponent,    
+    FavoriteComponent,
+    FavoritosComponent,    
   ],
   imports: [
     BrowserModule,

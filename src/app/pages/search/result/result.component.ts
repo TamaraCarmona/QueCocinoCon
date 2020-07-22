@@ -25,7 +25,8 @@ export class ResultComponent implements OnInit {
  public LoadResult(){  
   this.search.Search(this.userName).subscribe(res => {
     let recetaResponse: any = res;
-    this.listResult = recetaResponse;    
+    this.listResult = recetaResponse;   
+    console.log(this.listResult) 
     }, err => {
       console.log(err);
     });  

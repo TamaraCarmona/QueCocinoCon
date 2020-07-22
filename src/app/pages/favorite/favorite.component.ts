@@ -18,7 +18,8 @@ export class FavoriteComponent implements OnInit {
 
   ngOnInit(): void {
     this.userName = this.auth.currentUser;
-    this.search.TopRanking(this.userName).subscribe(res => {
+    console.log("entrando a favoritongoninit")
+    this.search.MyFavorite(this.userName).subscribe(res => {
       let recetaResponse: any = res;
       this.listResult = recetaResponse;      
       }, err => {

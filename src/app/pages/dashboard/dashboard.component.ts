@@ -38,6 +38,9 @@ export class DashboardComponent implements OnInit {
   Ranking(){
     this.router.navigate(['/ranking']);
   }
+  Favoritos(){
+    this.router.navigate(['/favorite']);
+  }
   Principal(){  
     this.router.navigate(['/add-search']);
     this.categoria.route = 1;    

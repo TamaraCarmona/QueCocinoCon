@@ -10,42 +10,44 @@ export class StepComponent implements OnInit {
 
   constructor(private recipe: RecipeService) { }
 
-  listPasos = [];
-  listFoto = [];
-  
-  descripcion;
-  numeroPaso; //Posicion de la lista
-  urlFoto;
-  posicion;
-  base64textString = [];
+  listPasos = [];  
+  base64textString = []; 
+
   fila;
+  paso;
+
   ngOnInit(): void {
+    this.paso = { 
+        descripcion : '',      
+        listFoto  : [],        
+    }
+
   }
 
-  AddStep(){
-    let Paso = { 
-     descripcion : this.descripcion,
-     numeroPaso : this.numeroPaso,
+  AddStep(){  
+    this.listPasos.push(this.paso);
+    this.recipe.listPasos = this.listPasos;  
+    this.paso = { 
+      descripcion : '',      
+      listFoto  : [],  
+    }
+   
   }
 
-    this.listPasos.push(Paso);
-    this.recipe.listPasos = this.listPasos;
-    this.descripcion = '';
-    this.urlFoto = '';
-  }
+
   addFoto(){
-    let foto = { 
+  /*  let foto = { 
      urlfoto : this.urlFoto,
      pos : this.posicion,
    } 
     this.listFoto.push(foto);
-    this.recipe.listFotos = this.listFoto;
+    this.recipe.listFotos = this.listFoto;*/
   }
 
   onUploadChange(evt: any,i) {
     const file = evt.target.files[0];
-    console.log(i)
-    this.fila = i;
+    console.log(i,"i")
+   this.fila = i;
     if (file) {
       const reader = new FileReader();
 
@@ -54,14 +56,21 @@ export class StepComponent implements OnInit {
     }
   }
 
-  handleReaderLoaded(e) {            
-   console.log(this.fila)
-    this.base64textString[this.fila] = ('data:image/png;base64,' + btoa(e.target.result));      
-    this.listFoto[this.fila] = this.base64textString[this.fila];     
+  handleReaderLoaded(e) {   
+    let base64 = 'data:image/png;base64,' + btoa(e.target.result);
+    console.log(this.fila, "fila")    
+    this.base64textString[this.fila] = base64;
+    this.paso.listFoto[this.fila] = this.base64textString[this.fila];
+
   }
 
-  deletestep(step){
-    
+  deletestep(seleccionado){
+      for (let paso of this.listPasos) {     
+        if (paso.step == seleccionado){
+          this.listPasos.splice(this.listPasos.indexOf(seleccionado), 1);
+          break;
+      }      
+    }
   }
 
 }
