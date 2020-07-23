@@ -1,16 +1,17 @@
 <div class="row">
     <div class="col">
         <div class="viewrecipecontainer">
-        <div *ngFor="let receta of listReceta">    
-        <h2 class="center">{{receta.titulo}}</h2>
-        <br>
+            <div *ngFor="let receta of listReceta">    
+                <h2 class="center">{{receta.titulo}}</h2>            
+            <div class="row">                
+                <h6>  Categoria: {{receta.categoria}}    </h6>                                       
+            </div> 
             <div class="row">
-             <h6>  Categoria: {{receta.categoria}}    </h6>         
                 <div class="col" style="width: 10px;"> 
                     <img [src]="receta.urlReceta" class="image"/>  
                 </div>
             </div> 
-        </div>       
+            </div>       
             <div class="row">
                 <div class="col">
                 <h5>Ingredientes:</h5>
@@ -23,40 +24,24 @@
                     </div>  
                 </div>    
             </div>         
-        <h4><strong> Pasos</strong></h4>   
+            <h4><strong> Pasos</strong></h4>   
             <div *ngIf="listPasos && listPasos.length > 0">
-                <div *ngFor="let step of listPasos;let i=index">   
-                    <div class="flotante">  
-                        <div class="row">
-                            <div class="col-md-1"></div>
-                            <div class="col-md-10">
-                            {{i+1}}   
-                            <div class="row">
-                                <div class="col">
-                                    <div class="container-imagen">
-                                        <div *ngFor="let i of [0,1,2];let j=index">
-                                            <div class="imagenload">                                                                                                                  
-                                             <!--   <img [src]="listFoto[i]" class="img-thumbnail" *ngIf="(listFoto[i])"/> -->                                      
-                                            </div>             
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                              
-                            </div>
-                            <div class="col-md-1"></div>
-                        </div>              
-                        <div class="row">
-                            <div class="col-md-1"></div>
-                            <div class="col-md-10">   
-                                <div class="" data-field="textarea" data-maxlength="500" data-dir-attribute="auto">
-                                    {{step.descripcion}}
-                                </div>
-                            </div>
-                            <div class="col-md-1"></div>  
-                        </div>       
-                    </div>
-                </div>
-            </div>          
+                <div *ngFor="let step of listPasos;let i=index">                   
+                    <div class="row">                            
+                        {{i+1}}                                                           
+                        <div class="col" style="width: 10px;"> 
+                            <img [src]="step.urlFoto" class="image"/>  
+                        </div> 
+                    </div>                            
+                    <div class="row">                             
+                        <div class="" data-field="textarea" data-maxlength="500" data-dir-attribute="auto">
+                            {{step.descripcion}}
+                        </div>
+                    </div>                            
+                </div>       
+            </div>
         </div>
-    </div>
-</div>
+    </div>    
+</div>                           
+           
+ 

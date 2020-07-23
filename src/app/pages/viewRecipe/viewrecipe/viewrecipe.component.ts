@@ -28,12 +28,7 @@ export class ViewrecipeComponent implements OnInit {
   ngOnInit(): void {
     this.receta.Recipe(this.idReceta).subscribe(res => {   
       console.log(res);      
-      let responseReceta : any = res;
-     
-      /*this.titulo = listReceta[0];
-      this.categoria = listReceta[1];
-      this.userName = listReceta[0];
-      this.urlReceta = listReceta[0];*/
+      let responseReceta : any = res;        
       this.listReceta = responseReceta.receta;
       this.listIngredientes = responseReceta.listIngredient;
       this.listPasos = responseReceta.listPaso;

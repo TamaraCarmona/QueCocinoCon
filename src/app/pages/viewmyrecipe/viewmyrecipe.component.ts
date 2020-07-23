@@ -20,7 +20,8 @@ export class ViewmyrecipeComponent implements OnInit {
     this.userName = this.auth.currentUser;
     this.search.SearchUserName(this.userName).subscribe(res => {
       let recetaResponse: any = res;
-      this.listResult = recetaResponse;      
+      this.listResult = recetaResponse;  
+      console.log(this.listResult)    
       }, err => {
         console.log(err);
       });  
@@ -34,7 +35,7 @@ export class ViewmyrecipeComponent implements OnInit {
    this.receta.Delete(idReceta,this.userName).subscribe(res => {
     console.log(res);
     }, err => {
-      console.log(err);
+      this.route.navigate(['/viewrecipe']);
     });
  }
 

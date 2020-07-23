@@ -15,13 +15,13 @@ export class StepComponent implements OnInit {
 
   fila;
   paso;
+  foto;
 
   ngOnInit(): void {
     this.paso = { 
         descripcion : '',      
         listFoto  : [],        
-    }
-
+    }  
   }
 
   AddStep(){  
@@ -29,7 +29,7 @@ export class StepComponent implements OnInit {
     this.recipe.listPasos = this.listPasos;  
     this.paso = { 
       descripcion : '',      
-      listFoto  : [],  
+      listFoto  : [],        
     }
    
   }
@@ -59,7 +59,7 @@ export class StepComponent implements OnInit {
   handleReaderLoaded(e) {   
     let base64 = 'data:image/png;base64,' + btoa(e.target.result);
     console.log(this.fila, "fila")    
-    this.base64textString[this.fila] = base64;
+    this.base64textString[this.fila] = base64;    
     this.paso.listFoto[this.fila] = this.base64textString[this.fila];
 
   }

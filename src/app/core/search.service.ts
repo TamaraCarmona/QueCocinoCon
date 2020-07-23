@@ -35,7 +35,7 @@ export class SearchService {
     return this.http.post('http://localhost:3000/favorite/create',{userName:userName,idReceta:idReceta})
   }
   disfavorite(userName,idReceta){
-    return this.http.put('http://localhost:3000/ranking/like/delete/'+idReceta,{userName:userName})
+    return this.http.put('http://localhost:3000/ranking/favorite/delete/'+idReceta,{userName:userName})
   }
 
   MyFavorite(userName){

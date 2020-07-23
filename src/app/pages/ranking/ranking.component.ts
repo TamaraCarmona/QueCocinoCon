@@ -21,7 +21,8 @@ export class RankingComponent implements OnInit {
     this.userName = this.auth.currentUser;
     this.search.TopRanking(this.userName).subscribe(res => {
       let recetaResponse: any = res;
-      this.listResult = recetaResponse;      
+      this.listResult = recetaResponse;  
+      console.log(this.listResult)    
       }, err => {
         console.log(err);
       }); 
@@ -55,7 +56,7 @@ export class RankingComponent implements OnInit {
     });
 }
 
- toggleHeart(receta){
+toggleHeart(receta){
   receta.megusta = !receta.megusta;
   if(receta.megusta){
     this.insertLike(receta);
