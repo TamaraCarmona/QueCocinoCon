@@ -1,18 +1,33 @@
-<div class="row">
-    <div class="col">
-        <div class="viewrecipecontainer">
-            <div *ngFor="let receta of listReceta">    
-                <h2 class="center">{{receta.titulo}}</h2>            
-            <div class="row">                
-                <h6>  Categoria: {{receta.categoria}}    </h6>                                       
-            </div> 
-            <div class="row">
-                <div class="col" style="width: 10px;"> 
-                    <img [src]="receta.urlReceta" class="image"/>  
+
+    <div class="viewrecipecontainer">
+        <div class="viewrecipe-item" *ngFor="let receta of listReceta">
+            <div class="container-info">
+                <h2 class="center">{{receta.titulo}}</h2>
+                <h6> Categoria: {{receta.categoria}} </h6>
+                <div class="container-image">
+                    <img [src]="receta.urlReceta" class="img-fluid" />
                 </div>
-            </div> 
-            </div>       
-            <div class="row">
+            </div>            
+            <div class="container-ingredients">
+                <div class="ingredient" *ngFor="let ingrediente of listIngredientes">
+                    <span class="badge badge-pill badge-light">{{ingrediente.nombre}} {{ingrediente.cantidad}} {{ingrediente.umedida}}</span>
+                </div>                
+            </div>
+            <div class="container-steps">
+                <div class="step-item" *ngFor="let step of listPasos;let i=index">
+                   <span class="step-number">{{i+1}}</span> 
+                    <div class="container-image-steps">
+                        <div class="foto" *ngFor="let foto of step.fotos">
+                            <img [src]="foto.urlFoto" class="img-fluid" />
+                        </div>                        
+                    </div>
+                    <div class="step-desc" data-field="textarea" data-maxlength="500" data-dir-attribute="auto">
+                       <h5>{{step.descripcion}}</h5>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <!-- <div class="row">
                 <div class="col">
                 <h5>Ingredientes:</h5>
                     <div *ngIf="listIngredientes && listIngredientes.length > 0">
@@ -29,8 +44,8 @@
                 <div *ngFor="let step of listPasos;let i=index">                   
                     <div class="row">                            
                         {{i+1}}                                                           
-                        <div class="col" style="width: 10px;"> 
-                            <img [src]="step.urlFoto" class="image"/>  
+                        <div *ngFor="let foto of step.fotos" class="col" style="width: 10px;"> 
+                            <img [src]="foto.urlFoto" class="image"/>  
                         </div> 
                     </div>                            
                     <div class="row">                             
@@ -39,9 +54,5 @@
                         </div>
                     </div>                            
                 </div>       
-            </div>
-        </div>
-    </div>    
-</div>                           
-           
- 
+            </div> -->
+    </div>
