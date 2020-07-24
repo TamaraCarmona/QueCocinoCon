@@ -46,5 +46,21 @@ export class DashboardComponent implements OnInit {
     this.categoria.route = 1;    
     this.search.categoria = 1;
   }
- 
+  Postres(){  
+    this.router.navigate(['/add-search']);
+    this.categoria.route = 2;    
+    this.search.categoria = 2;
+  }
+  Bebidas(){  
+    this.router.navigate(['/add-search']);
+    this.categoria.route = 3;    
+    this.search.categoria = 3;
+  }
+  Reposteria(){  
+    this.router.navigate(['/add-search']);
+    this.categoria.route = 4;    
+    this.search.categoria = 4;
+  }
+
+
 }

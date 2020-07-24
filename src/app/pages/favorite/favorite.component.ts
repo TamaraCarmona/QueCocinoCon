@@ -21,7 +21,8 @@ export class FavoriteComponent implements OnInit {
     console.log("entrando a favoritongoninit")
     this.search.MyFavorite(this.userName).subscribe(res => {
       let recetaResponse: any = res;
-      this.listResult = recetaResponse;      
+      this.listResult = recetaResponse;           
+      console.log(this.listResult)
       }, err => {
         console.log(err);
       }); 

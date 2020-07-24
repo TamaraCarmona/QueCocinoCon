@@ -16,13 +16,26 @@ export class AddSearchComponent implements OnInit {
   constructor(private search: SearchService, private auth: AuthService, private route:Router) { }
 
   userName;
-  
+  fullMatch;
+  seleccionadof;
+
   ngOnInit(): void {
     this.userName = this.auth.currentUser;
   }
 
-  Search(){
-      this.Result.LoadResult();
+  Search(){   
+    this.fullMatch = this.FullMatch();    
+    this.search.fullMatch = this.fullMatch;  
+    this.Result.LoadResult();
+  }
+
+  FullMatch(){      
+    if(this.seleccionadof == 1){
+      return this.fullMatch = true;
+    }else{
+      return this.fullMatch = false;
+    }
+   
   }
   
 }

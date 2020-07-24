@@ -30,8 +30,7 @@ export class FilterComponent implements OnInit {
     console.log(this.fullMatch)
 
     this.listIngrediente.push(ingrediente);  
-    this.search.listIngredientes = this.listIngrediente;
-    this.search.fullMatch = this.fullMatch;
+    this.search.listIngredientes = this.listIngrediente;  
     this.ingrediente = '';   
   }
 
@@ -43,11 +42,12 @@ export class FilterComponent implements OnInit {
       }      
     }
   }
-  FullMatch(){
+  FullMatch(){   
     if(this.seleccionadof == 1){
       return this.fullMatch = true;
     }else{
       return this.fullMatch = false;
     }
+   
   }
 }

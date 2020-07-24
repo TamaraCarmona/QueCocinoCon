@@ -11,7 +11,8 @@ export class SearchService {
   fullMatch;
   constructor(private http: HttpClient) { }
 
-  Search(userName){    
+  Search(userName){  
+    console.log(this.categoria,"categoria")     
     const ingredientes = this.listIngredientes;   
     return this.http.post('http://localhost:3000/search/principal' , {ingredientes,userName:userName ,categoria:this.categoria,fullMatch:this.fullMatch})
    
@@ -38,8 +39,7 @@ export class SearchService {
     return this.http.put('http://localhost:3000/ranking/favorite/delete/'+idReceta,{userName:userName})
   }
 
-  MyFavorite(userName){
-    console.log("entra a la favorita")
+  MyFavorite(userName){  
     return this.http.get('http://localhost:3000/ranking/favorito/'+userName);
   }
 

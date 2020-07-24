@@ -1,39 +1,18 @@
 
-<div class="row">
-
-    <div class="col-md-12">                            
-        <div class="ingredient">
-            <div class="col1">
-                <input type="text"  class="form-control" placeholder="Ingredientes..."[(ngModel)]="ingrediente" >
-            </div>  
-            <fieldset class="form-group">
-                <div class="row">                 
-                  <div class="col-md-1"></div>
-                  <div class="col-md-11">                                      
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" [(ngModel)]="seleccionadof">
-                      <option selected>Selection</option>
-                      <option value="1">Full match</option>
-                      <option value="2">Partial Match</option>                     
-                    </select>                    
-                  </div>  
-                </div>
-              </fieldset>              
-            <div class="col">
-                <button type="button" class="btn btn-outline-secondary col" (click)="Agregar()" >+</button>
-            </div>         
-        </div>         
-    </div>   
-   
-</div>
-<div class="row">
-   
-    <div class="col-md-10">       
-        <div *ngFor="let ingredient of listIngrediente">        
-            <div class="flotante">                                                     
-                {{ingredient.ingrediente}} <strong class="mr-auto">  </strong>                   
-                <button type="button" class="close" data-dismiss="alert" (click)="Delete(ingredient.ingrediente)">×</button>                              
-            </div>          
-        </div>        
+<div class="container-filter">                                     
+    <div class="ingredient">
+        <input type="text"  class="form-control" placeholder="Ingredientes..."[(ngModel)]="ingrediente" >                                                      
+                           
+    </div>                          
+    <div class="view-ingredient">   
+              
+            <div *ngFor="let ingredient of listIngrediente">        
+                <div class="flotante">                                                     
+                    {{ingredient.ingrediente}} <strong class="mr-auto">  </strong>                   
+                    <button type="button" class="close" data-dismiss="alert" (click)="Delete(ingredient.ingrediente)">×</button>                              
+                </div>          
+            </div>        
+          
     </div>
-   
+    <button type="button" class="btn btn-outline-secondary" (click)="Agregar()" >+</button>         
 </div>

@@ -1,6 +1,13 @@
 <div class=" container">
     <app-filter></app-filter>    
-    <app-categories></app-categories>
+    <fieldset class="form-group">                                                    
+        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" [(ngModel)]="seleccionadof" >
+        <option selected>Selection</option>
+        <option value="1">Full match</option>
+        <option value="2">Partial Match</option>                     
+        </select>                                    
+    </fieldset> 
+    <app-categories></app-categories>    
     <div class="center">
         <button class="form-control" (click)="Search()">Buscar</button>
     </div> 

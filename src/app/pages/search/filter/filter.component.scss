@@ -1,8 +1,17 @@
-.ingredient{
+.container-filter{
+    display: flex;
+    flex-direction: column;    
+}
+
+.view-ingredient{
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    
+}
+.ingredient{
+    display: flex;
+    flex-direction: column;
+   
 }
 .col1{
     
@@ -17,3 +26,4 @@
     background-color: rgba(204, 223, 174, 0.61);
     border-style: groove;
 }
+

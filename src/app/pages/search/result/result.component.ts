@@ -28,7 +28,8 @@ export class ResultComponent implements OnInit {
     this.listResult = recetaResponse;   
     console.log(this.listResult) 
     }, err => {
-      console.log(err);
+      this.listResult = [];
+      this.route.navigate(['/add-search']);
     });  
   }
 
